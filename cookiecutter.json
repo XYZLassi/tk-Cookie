@@ -1,0 +1,7 @@
+{
+    "name": "TKWindow",
+    "presenter_name": "{{cookiecutter.name}}Presenter",
+    "base_name": "tk_window",
+    "presenter_base_name": "{{cookiecutter.base_name}}_presenter",
+    "type": "tk.Toplevel"
+}
