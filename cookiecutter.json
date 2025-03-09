@@ -1,7 +1,18 @@
 {
-    "name": "TKWindow",
-    "presenter_name": "{{cookiecutter.name}}Presenter",
-    "base_name": "tk_window",
-    "presenter_base_name": "{{cookiecutter.base_name}}_presenter",
-    "type": "tk.Toplevel"
+  "__type_dict": {
+    "Toplevel": "Window",
+    "Frame": "Widget"
+  },
+  "type": [
+    "Toplevel",
+    "Frame"
+  ],
+  "__ext_name": "{{ cookiecutter.__type_dict.get(cookiecutter.type,'Widget') }}",
+  "name": "TK{{ cookiecutter.__ext_name }}",
+  "presenter_name": "{{cookiecutter.name}}Presenter",
+  "base_name": "tk_{{ cookiecutter.__ext_name.lower() }}",
+  "presenter_base_name": "{{cookiecutter.base_name}}_presenter",
+  "__type": "tk.{{cookiecutter.type}}",
+  "__protocol_name": "{{cookiecutter.name}}Protocol",
+  "__presenter_protocol_name": "{{cookiecutter.presenter_name}}Protocol"
 }

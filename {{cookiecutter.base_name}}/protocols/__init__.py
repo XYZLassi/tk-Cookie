@@ -1,4 +1,4 @@
-__all__ = ["{{cookiecutter.name}}Protocol","{{cookiecutter.presenter_name}}Protocol"]
+__all__ = ["{{cookiecutter.__protocol_name}}", "{{cookiecutter.__presenter_protocol_name}}"]
 
-from .{{cookiecutter.presenter_base_name}}_protocol import {{cookiecutter.presenter_name}}Protocol
-from .{{cookiecutter.base_name}}_protocol import {{cookiecutter.name}}Protocol
+from .{{cookiecutter.presenter_base_name}}_protocol import {{cookiecutter.__presenter_protocol_name}}
+from .{{cookiecutter.base_name}}_protocol import {{cookiecutter.__protocol_name}}

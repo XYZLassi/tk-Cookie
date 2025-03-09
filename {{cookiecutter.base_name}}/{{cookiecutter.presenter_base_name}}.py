@@ -1,11 +1,14 @@
-from .protocols import {{cookiecutter.name}}Protocol, {{cookiecutter.presenter_name}}Protocol
+from .protocols import {{cookiecutter.__protocol_name}}, {{cookiecutter.__presenter_protocol_name}}
 
 
-class {{cookiecutter.presenter_name}}({{cookiecutter.presenter_name}}Protocol):
-	def __init__(self, view: {{cookiecutter.name}}Protocol):
+class {{cookiecutter.presenter_name}}({{cookiecutter.__presenter_protocol_name}}):
+	def __init__(self, view: {{cookiecutter.__protocol_name}}):
 		self.view = view
 		
 		self.view.create_ui(self)
-		
+	
+	def on_close():
+		self.close()
+	
 	def close(self):
 		self.view.destroy()

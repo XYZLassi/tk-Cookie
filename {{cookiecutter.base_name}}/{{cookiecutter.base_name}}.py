@@ -1,15 +1,17 @@
 import tkinter as tk
 
-from .protocols import {{cookiecutter.name}}Protocol, {{cookiecutter.presenter_name}}Protocol
+from .protocols import {{cookiecutter.__protocol_name}}, {{cookiecutter.__presenter_protocol_name}}
 
 
-class {{cookiecutter.name}}({{cookiecutter.type}}, {{cookiecutter.name}}Protocol):
+class {{cookiecutter.name}}({{cookiecutter.type}}, {{cookiecutter.__protocol_name}}):
 	def __init__(self, parent):
 		super().__init__(parent)
 	
-	def create_ui(self, presenter: {{cookiecutter.presenter_name}}Protocol):
+	def create_ui(self, presenter: {{cookiecutter.__presenter_protocol_name}}):
 		# General
-		self.protocol("WM_DELETE_WINDOW", presenter.close)
+		{%- if cookiecutter.type == "tk.Toplevel"%}
+		self.protocol("WM_DELETE_WINDOW", presenter.on_close)
+		{%- endif %}
 		
 		# UI
 		main_frame = tk.Frame(self)
