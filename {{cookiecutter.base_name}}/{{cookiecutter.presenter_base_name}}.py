@@ -7,7 +7,7 @@ class {{cookiecutter.presenter_name}}({{cookiecutter.__presenter_protocol_name}}
 		
 		self.view.create_ui(self)
 	
-	def on_close():
+	def on_close(self):
 		self.close()
 	
 	def close(self):
