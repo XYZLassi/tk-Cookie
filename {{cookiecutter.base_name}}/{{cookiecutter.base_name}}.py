@@ -3,13 +3,13 @@ import tkinter as tk
 from .protocols import {{cookiecutter.__protocol_name}}, {{cookiecutter.__presenter_protocol_name}}
 
 
-class {{cookiecutter.name}}({{cookiecutter.type}}, {{cookiecutter.__protocol_name}}):
+class {{cookiecutter.name}}({{cookiecutter.__type}}, {{cookiecutter.__protocol_name}}):
 	def __init__(self, parent):
 		super().__init__(parent)
 	
 	def create_ui(self, presenter: {{cookiecutter.__presenter_protocol_name}}):
 		# General
-		{%- if cookiecutter.type == "tk.Toplevel"%}
+		{%- if cookiecutter.type == "Toplevel"%}
 		self.protocol("WM_DELETE_WINDOW", presenter.on_close)
 		{%- endif %}
 		
