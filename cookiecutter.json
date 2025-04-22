@@ -1,19 +1,23 @@
 {
-  "__type_dict": {
-    "Toplevel": "Window",
-    "Frame": "Widget"
-  },
+  "framework": ["ttk","tk"],
   "type": [
     "Toplevel",
     "Frame"
   ],
-  "framework": ["tk"],
+  "__type_dict": {
+    "Toplevel": "Window",
+    "Frame": "Widget"
+  },
+  "__parent_types":{
+  	 "Toplevel": "tk.Toplevel",
+    "Frame": "{{cookiecutter.framework}}.Widget"
+  },
   "__ext_name": "{{ cookiecutter.__type_dict.get(cookiecutter.type,'Widget') }}",
   "name": "TK{{ cookiecutter.__ext_name }}",
   "presenter_name": "{{cookiecutter.name}}Presenter",
   "base_name": "tk_{{ cookiecutter.__ext_name.lower() }}",
   "presenter_base_name": "{{cookiecutter.base_name}}_presenter",
-  "__type": "{{cookiecutter.framework}}.{{cookiecutter.type}}",
+  "__type": "{{cookiecutter.__parent_types[cookiecutter.type]}}",
   "__protocol_name": "{{cookiecutter.name}}Protocol",
   "__presenter_protocol_name": "{{cookiecutter.presenter_name}}Protocol"
 }

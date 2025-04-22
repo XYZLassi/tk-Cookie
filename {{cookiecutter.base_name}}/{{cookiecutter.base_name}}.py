@@ -16,5 +16,5 @@ class {{cookiecutter.name}}({{cookiecutter.__type}}, {{cookiecutter.__protocol_n
 		{%- endif %}
 		
 		# UI
-		main_frame = ttk.Frame(self)
+		main_frame = {{cookiecutter.framework}}.Frame(self)
 		main_frame.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
