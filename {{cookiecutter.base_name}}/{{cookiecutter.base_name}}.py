@@ -3,7 +3,7 @@ from tkinter import ttk
 
 from .protocols import {{cookiecutter.__protocol_name}}, {{cookiecutter.__presenter_protocol_name}}
 
-
+# noinspection PyMethodMayBeStatic
 class {{cookiecutter.name}}({{cookiecutter.__type}}, {{cookiecutter.__protocol_name}}):
 	def __init__(self, parent):
 		super().__init__(parent)
